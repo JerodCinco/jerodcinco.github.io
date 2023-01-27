@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', san-serif;
+    scroll-behavior: smooth;
+}
+
+body   
+{
+    overflow-x: hidden;
+}
+        
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    /* space-between 
+    Distribute items evenly
+    The first item is flush with the start,
+    the last is flush with the end */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* create space between all the listed terms in our unordered list */
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+    
+}
+
+/*  to style the text of our listed terms in our unordered list */
+header ul li a 
+{
+    /* we can't put these in header ul li as they target the text */
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    /* after hovering over the menu item, make the white background rounded */
+    border-radius: 20px;
+}
+
+header ul li a:hover, header ul li a.active 
+{
+    background: #fff;
+    color : #2b1055;
+}
+
+.paralax 
+{
+    position: absolute;
+    height: 100%;
+}
+
+.paralax-item 
+{
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.p-item1
+{
+    background: url("img/m_1.png") center/cover no-repeat;
+}
+
+.p-item3
+{
+    background: url("img/m_3.png") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.p-item4
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10000%;
+    height: 100%;
+    content: '';
+    background: url("img/rocket.png") repeat-x;
+    background-size: contain;
+    background-position: center;
+    /* Marquee is an animation effect for web pages used to create horizontal or vertical scrolling text and images */
+    animation: marquee 20s linear infinite;
+}
+
+/* :: is for psuedo-elements */
+.p-item4::before 
+{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 1000%;
+    height: 100;
+    content: '';
+    background: url("img/fog_2.png") repeat-x;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+}
+
+/* The translate3d() CSS function repositions an element in 3D space. Its result is a <transform-function> data type */
+@keyframes marquee 
+{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    100%{
+        transform: translate3d(-200vw,0,0);
+    }
+}
+
+.container 
+{
+    position: relative;
+    z-index: 1;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 100vh;
+}
+
+.content-header 
+{
+    font-family: sans-serif;
+    color: white;
+    /* !important adds importance to a property/value 
+        this will override ALL previous styling on the specific property of the element
+    */
+    text-align: center !important;
+    text-transform: uppercase;
+    margin-right : -20%;
+}
+
+.content-header h1
+{
+    font-size: 120px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: -40px;
+}
+
+.content-header h2
+{
+    font-size: 40px;
+    font-weight: 500;
+    color: white; 
+}
+
+.content 
+{
+    width: 200px;
+    height: auto;
+    margin-right: 40px;
+}
+
+#rocket 
+{
+    margin-left: 45vw;
+    /* the flip orientation of image horizontally */
+    transform: rotateY(-180deg);
+}
+
+
+/* the following code is for the slider on the about page. */
+
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 500px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #40D3DC;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40D3DC;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40D3DC;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40D3DC;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #40D3DC;
+  }

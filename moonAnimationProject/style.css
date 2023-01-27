@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', san-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    /* this will fill 100% of the viewport height*/
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055,#7597de);
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    /* space-between 
+    Distribute items evenly
+    The first item is flush with the start,
+    the last is flush with the end */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* create space between all the listed terms in our unordered list */
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+    
+}
+
+/*  to style the text of our listed terms in our unordered list */
+header ul li a 
+{
+    /* we can't put these in header ul li as they target the text */
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    /* after hovering over the menu item, make the white background rounded */
+    border-radius: 20px;
+}
+
+header ul li a:hover, header ul li a.active 
+{
+    background: #fff;
+    color : #2b1055;
+}
+
+section
+{
+    position: relative;
+    /* let all images take up 100% of the width they can take*/
+    width: 100%;
+    /* this will fill 100% of the viewport height*/
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* to hide the Explore button and Moon Light Text behind the background once we reach lorem ipsum*/
+    overflow: hidden;
+}
+
+/* 
+    The ::before selector inserts something before the content of each selected element(s). 
+    this is to make a seamless transition from the mountain PNGS to the background color.
+*/
+section::before
+{
+    /* notice what happens if you take out the content line below. */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522, transparent);
+    z-index: 100;
+}
+
+/* this allows us to place most of the pictures on top of each other */
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 
+        The CSS object-fit property is used to specify how an <img> 
+        or <video> should be resized to fit its container.
+        This property tells the content to fill the container in a 
+        variety of ways; such as "preserve that aspect ratio" or 
+        "stretch up and take up as much space as possible".
+    */
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/*  this targets images with the id of "moon". CSS won't recognize it if the syntax was "img #moon*/
+section img#moon 
+{
+    /* 
+    The mix-blend-mode CSS property sets how an element's content 
+    should blend with the content of the element's parent and the 
+    element's background. 
+    
+    screen allows moon.img to blend with the background (aka globally) with a little increase in shine/brightness.
+    */
+    
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front 
+{
+    z-index: 10;
+}
+
+/* this targets the "Moon Light" text. */
+#text
+{
+    position: absolute;
+    right: -350px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+
+}
+
+/* for the "Explore text in the middle, below the Moon*/
+#btn
+{
+    text-decoration: none;
+    display: inline-block;
+    padding:  8px 30px;
+    border-radius:  40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+
+}
+
+.sec
+{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+
+.sec h2 
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p 
+{
+    font-size: 1.2em;
+    color: #fff;
+}
