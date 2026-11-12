@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Park Map</title>
+
+    <link
+        href="./css/full.css"
+        rel="stylesheet">
+
+    <link
+        href="./css/map.css"
+        rel="stylesheet">
+
+    <script
+        src="./js/map.js"
+        type="text/javascript">
+    </script>
+</head>
+
+
+<body onload="getHours()">
+
+    <div class="box">
+
+        <!-- =========================================================
+             NAVIGATION
+             ========================================================= -->
+
+        <div class="nav-menu">
+
+            <a
+                class="square-btn"
+                href="rentals.html">
+                RENTALS
+            </a>
+
+            <a
+                class="square-btn"
+                href="express.html">
+                PREMIUM ACCESS
+            </a>
+
+            <a
+                class="square-btn"
+                href="tickets.html">
+                PARK TICKETS
+            </a>
+
+            <a
+                class="square-btn"
+                href="annualPasses.html">
+                MEMBERSHIPS
+            </a>
+
+            <a
+                class="square-btn"
+                href="map.html">
+                MAP
+            </a>
+
+            <a
+                class="square-btn"
+                href="main.html">
+                CHANGE VENUE
+            </a>
+
+        </div>
+
+
+        <br><br><br>
+
+
+        <!-- =========================================================
+             ATTRACTION CATEGORY FILTERS
+             ========================================================= -->
+
+        <div class="submenu">
+
+            <a
+                class="LbuttonsMap"
+                onclick="toggleVisibility('Thrills', this)">
+                Thrills &amp; Adventures
+            </a>
+
+            <a
+                class="LbuttonsMap"
+                onclick="toggleVisibility('family', this)">
+                Family Fun
+            </a>
+
+            <a
+                class="LbuttonsMap"
+                onclick="toggleVisibility('kids', this)">
+                Kids' Adventures
+            </a>
+
+            <a
+                class="LbuttonsMap"
+                onclick="toggleVisibility('shows', this)">
+                Live Entertainment
+            </a>
+
+            <a
+                class="LbuttonsMap"
+                onclick="toggleVisibility('relax', this)">
+                Relax &amp; Recharge
+            </a>
+
+        </div>
+
+
+        <!-- =========================================================
+             MAP CONTENT
+             ========================================================= -->
+
+        <div class="subbox">
+
+            <br>
+
+            <p class="MapDescription">
+                Explore four fictional parks and discover
+                sample attractions by category.
+            </p>
+
+
+            <!--
+                Portfolio Version
+
+                The production application used an overview image
+                containing clickable regions that opened individual
+                park maps.
+
+                The portfolio version uses one fictional destination
+                map instead, allowing the category controls below to
+                demonstrate the interactive functionality without
+                using proprietary park maps or imagery.
+            -->
+
+            <img
+                src="./images/SampleParkMap.png"
+                alt="Fictional destination map featuring Adventure Park, Discovery Park, Splash Harbor, and Galaxy Park"
+                class="img-responsive"
+                style="
+                    height: 525px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                ">
+
+
+            <!-- =====================================================
+                 THRILLS AND ADVENTURES
+                 ===================================================== -->
+
+            <div
+                class="popUps"
+                id="Thrills">
+
+                <div class="park-category-section">
+
+                    <h3>Adventure Park</h3>
+
+                    <h4>
+                        Thrills &amp; Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Velocity Run</li>
+                        <li>Canyon Drop</li>
+                        <li>Storm Chaser</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Discovery Park</h3>
+
+                    <h4>
+                        Thrills &amp; Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Skyrail Expedition</li>
+                        <li>River Rush</li>
+                        <li>Titan Loop</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Splash Harbor</h3>
+
+                    <h4>
+                        Thrills &amp; Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Cyclone Falls</li>
+                        <li>Blue Current</li>
+                        <li>Rapids Run</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Galaxy Park</h3>
+
+                    <h4>
+                        Thrills &amp; Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Comet Chase</li>
+                        <li>Lunar Launch</li>
+                        <li>Orbit Breaker</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 FAMILY FUN
+                 ===================================================== -->
+
+            <div
+                class="popUps"
+                id="family">
+
+                <div class="park-category-section">
+
+                    <h3>Adventure Park</h3>
+
+                    <h4>Family Fun</h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Harbor Carousel</li>
+                        <li>Forest Flyer</li>
+                        <li>Adventure Railway</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Discovery Park</h3>
+
+                    <h4>Family Fun</h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Riverboat Journey</li>
+                        <li>Cloud Cruiser</li>
+                        <li>Garden Expedition</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Splash Harbor</h3>
+
+                    <h4>Family Fun</h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Family Lagoon</li>
+                        <li>Tidal Playground</li>
+                        <li>Winding River</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Galaxy Park</h3>
+
+                    <h4>Family Fun</h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Starship Tour</li>
+                        <li>Cosmic Carousel</li>
+                        <li>Planetary Railway</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 KIDS' ADVENTURES
+                 ===================================================== -->
+
+            <div
+                class="popUps"
+                id="kids">
+
+                <div class="park-category-section">
+
+                    <h3>Adventure Park</h3>
+
+                    <h4>
+                        Kids' Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Little Explorers Trail</li>
+                        <li>Junior Speedway</li>
+                        <li>Storybook Flight</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Discovery Park</h3>
+
+                    <h4>
+                        Kids' Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Tiny Treetop Trek</li>
+                        <li>Playhouse Express</li>
+                        <li>Discovery Garden</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Splash Harbor</h3>
+
+                    <h4>
+                        Kids' Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Splash Pad</li>
+                        <li>Mini Rapids</li>
+                        <li>Bubble Bay</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Galaxy Park</h3>
+
+                    <h4>
+                        Kids' Adventures
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Junior Astronaut Camp</li>
+                        <li>Moon Buggy Ride</li>
+                        <li>Rocket Playground</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 LIVE ENTERTAINMENT
+                 ===================================================== -->
+
+            <div
+                class="popUps"
+                id="shows">
+
+                <div class="park-category-section">
+
+                    <h3>Adventure Park</h3>
+
+                    <h4>
+                        Live Entertainment
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Adventure Live</li>
+                        <li>Harbor Spectacular</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Discovery Park</h3>
+
+                    <h4>
+                        Live Entertainment
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Legends of the Sky</li>
+                        <li>Riverfront Celebration</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Splash Harbor</h3>
+
+                    <h4>
+                        Live Entertainment
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Waves in Motion</li>
+                        <li>Sunset Splash</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Galaxy Park</h3>
+
+                    <h4>
+                        Live Entertainment
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Beyond the Stars</li>
+                        <li>Galactic Celebration</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 RELAX AND RECHARGE
+                 ===================================================== -->
+
+            <div
+                class="popUps"
+                id="relax">
+
+                <div class="park-category-section">
+
+                    <h3>Adventure Park</h3>
+
+                    <h4>
+                        Relax &amp; Recharge
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Garden Terrace</li>
+                        <li>Harbor Lounge</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Discovery Park</h3>
+
+                    <h4>
+                        Relax &amp; Recharge
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Riverside Retreat</li>
+                        <li>Skyline Cafe</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Splash Harbor</h3>
+
+                    <h4>
+                        Relax &amp; Recharge
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Serenity Cove</li>
+                        <li>Lagoon Loungers</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="park-category-section">
+
+                    <h3>Galaxy Park</h3>
+
+                    <h4>
+                        Relax &amp; Recharge
+                    </h4>
+
+                    <hr>
+
+                    <ul>
+                        <li>Celestial Lounge</li>
+                        <li>Starlight Terrace</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 DEMO INFORMATION BUTTON
+                 ===================================================== -->
+
+            <div id="Terms">
+
+                <a
+                    class="LbuttonsMap"
+                    onclick="toggleVisibility('TermsAndConditions')">
+                    Demo Information
+                </a>
+
+            </div>
+
+
+            <!-- =====================================================
+                 SAMPLE PARK HOURS
+                 ===================================================== -->
+
+            <div class="park-hours">
+
+                <table
+                    class="dTable"
+                    id="dataTable-left">
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="ProductDescription">
+                                Sample Park Hours
+                            </th>
+
+                            <th>
+                                Hours
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+
+
+                <p class="portfolio-note">
+                    Sample operating hours for portfolio demonstration only.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+             DEMO INFORMATION MODAL
+             ========================================================= -->
+
+        <div
+            class="popUps"
+            id="TermsAndConditions">
+
+            <div class="portfolio-terms">
+
+                <button
+                    type="button"
+                    class="close"
+                    onclick="toggleVisibility('TermsAndConditions');"
+                    aria-label="Close demo information">
+
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+
+                </button>
+
+
+                <h2>
+                    Sample Destination Information
+                </h2>
+
+
+                <p>
+                    All destination names, park names, attraction names,
+                    operating hours, maps, policies, and other content
+                    displayed in this portfolio demonstration are fictional.
+                </p>
+
+
+                <p>
+                    Operating hours, attraction availability, and
+                    entertainment offerings are included solely to
+                    demonstrate the interface and interactive functionality.
+                </p>
+
+
+                <p>
+                    This demonstration does not represent actual park
+                    offerings, prices, operating schedules, or policies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

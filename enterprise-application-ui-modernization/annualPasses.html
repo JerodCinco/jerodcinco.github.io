@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Membership Options</title>
+
+    <link href="./css/full.css" rel="stylesheet">
+    <link href="./css/annualPasses.css" rel="stylesheet">
+    <script src="./js/annual.js" type="text/javascript"></script>
+</head>
+
+<body onload="getData('2-Park')">
+    <div class="box">
+        <div class="nav-menu">
+            <a class="square-btn" href="rentals.html">RENTALS</a>
+            <a class="square-btn" href="express.html">PREMIUM ACCESS</a>
+            <a class="square-btn" href="tickets.html">PARK TICKETS</a>
+            <a class="square-btn" href="annualPasses.html">MEMBERSHIPS</a>
+            <a class="square-btn" href="map.html">MAP</a>
+            <a class="square-btn" href="main.html">CHANGE VENUE</a>
+        </div>
+
+        <br><br><br>
+
+        <ul class="social">
+            <li>
+                <a class="buttons" id="2-Park" href="#2-Park"
+                   style="--bg: #3a83f7"
+                   onclick="getData('2-Park')">
+                    2-Park
+                </a>
+            </li>
+
+            <li>
+                <a class="buttons" id="3-Park" href="#3-Park"
+                   style="--bg: linear-gradient(-45deg, #3a83f7)"
+                   onclick="getData('3-Park')">
+                    3-Park
+                </a>
+            </li>
+
+            <li>
+                <a class="buttons" id="Resident" href="#Resident"
+                   style="--bg: #3a83f7"
+                   onclick="filterTable('Resident', null)">
+                    Resident
+                </a>
+            </li>
+
+            <li>
+                <a class="buttons" id="NonResident" href="#Non-Resident"
+                   style="--bg: #3a83f7"
+                   onclick="filterTable('NonResident', null)">
+                    Non-Resident
+                </a>
+            </li>
+        </ul>
+
+        <br><br>
+
+        <div class="subboxdos">
+            <br>
+
+            <div>
+                <p class="ProductDescription">
+                    Resident 2-Park Membership Options
+                </p>
+
+                <!--
+                    The original comparison page contained proprietary
+                    benefits and imagery, so it is disabled in this demo.
+                -->
+                <a id="compare"
+                   href="#"
+                   onclick="return false;"
+                   aria-disabled="true"
+                   title="Comparison page is not included in the portfolio demo">
+                    Compare Memberships
+                </a>
+
+                <br><br>
+
+                <table class="d-Table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Membership Options</th>
+                            <th>Price</th>
+                            <th>
+                                Monthly Payment -
+                                <a href="#sample-terms"
+                                   onclick="toggleVisibility('premiereModal04'); return false;">
+                                    View Sample Terms
+                                </a>
+                            </th>
+                            <th hidden>Selection</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        Portfolio-safe sample modal.
+
+        The production application displayed organization-specific
+        payment terms. This public demo uses fictional content to
+        preserve and demonstrate the modal interaction.
+    -->
+    <div class="popUps"
+         id="premiereModal04"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="sampleTermsTitle">
+        <div>
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        onclick="toggleVisibility('premiereModal04');"
+                        aria-label="Close sample terms">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h3 class="modal-title" id="sampleTermsTitle">
+                    Sample Monthly Payment Terms
+                </h3>
+            </div>
+
+            <p>
+                This portfolio demonstration uses fictional payment
+                information and does not represent a real financing offer.
+            </p>
+
+            <p>
+                Sample plan:
+                <br>
+                0% sample annual percentage rate
+                <br>
+                Initial payment required
+                <br>
+                Remaining balance divided into monthly payments
+            </p>
+
+            <p>
+                Terms, pricing, availability, and eligibility shown in this
+                demonstration are fictional and provided only to demonstrate
+                the user interface and modal behavior.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let prevtoggle = null;
+
+        function toggleVisibility(box) {
+            const div = document.getElementById(box);
+
+            if (!div) {
+                return;
+            }
+
+            if (prevtoggle && prevtoggle !== box) {
+                document.getElementById(prevtoggle)?.classList.remove("show");
+            }
+
+            div.classList.toggle("show");
+            prevtoggle = box;
+        }
+
+        // Close the sample terms modal when the backdrop is selected.
+        document.addEventListener("click", function (event) {
+            if (
+                event.target.classList &&
+                event.target.classList.contains("popUps")
+            ) {
+                event.target.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+</html>
