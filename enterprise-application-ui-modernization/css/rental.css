@@ -1,0 +1,114 @@
+.image-left {
+    float: left;
+    margin-right: 25px;
+    padding-left: 5%;
+}
+
+.bigtext {
+    font-size: 36px;
+    font-weight: 700;
+    color: #123c77;
+}
+
+.bigfont {
+    font-size: 22px;
+}
+
+table {
+    display: table;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.5;
+    transition-behavior:  allow-discrete;
+}
+
+#bottomText {
+    font-size: 12px;
+    font-kerning: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.social {
+    display:flex;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 2rem;
+    list-style: none;
+}
+
+.social li {
+  position: relative;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.social li::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    inset: -45% auto auto 50%;
+    font-size: 0.875rem;
+    color: #aeada3;
+    background: var(--bg, #2681f0);
+    border-radius: 0.25rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
+        visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.social li:has(a:hover, a:focus-visible)::after {
+    opacity: 1;
+    visibility: visible;
+    inset-block-start: -60%;
+}
+
+.social a {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  height: 55px;
+
+  background: rgba(255,255,255,.15);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.social a>i {
+    position: relative;
+    z-index: 1;
+}
+
+.social a::after {
+  display:none;
+}
+
+.social a:hover,
+.social a:focus-visible {
+
+  color: white;
+
+  background: rgba(255,255,255,.25);
+
+  transform: translateY(-2px);
+}
+
+.social a:hover::after,
+.social a:focus-visible::after {
+    inset-block-start: 0;
+}

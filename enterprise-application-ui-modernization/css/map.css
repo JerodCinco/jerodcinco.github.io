@@ -1,0 +1,227 @@
+.MapDescription {
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+
+/* =================================
+   FILTER BUTTON ROW
+   ================================= */
+.submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.LbuttonsMap {
+    height: fit-content;
+    width: max-content;
+    text-align: center;
+    background-color: #03763c;
+    color: white;
+    font-size: 15px;
+    padding: 15px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.LbuttonsMap:hover {
+    background-color: #2980b9;
+}
+
+/* =================================
+   MAIN MAP CONTAINER
+   ================================= */
+.subbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subbox img.img-responsive {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* =================================
+   POPUPS
+   ================================= */
+.popUps {
+    display: none;
+    position: absolute;
+    color: #fff;
+    top: 30%;
+    left: 0;
+    z-index: 50;
+    margin-left: 10%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+}
+
+.popUps.is-hidden {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(180px, 1fr));
+
+    gap: 12px;
+
+    width: 80%;
+
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#Thrills,
+#family,
+#kids,
+#relax,
+#shows,
+#TermsAndConditions {
+    color: white;
+    gap: 3px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 25%;
+}
+
+.park-category-section,
+#legal,
+.portfolio-terms {
+    background-color: rgba(9, 52, 117, 0.95);
+    color: white;
+    text-align: center;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 16px;
+}
+
+
+/* =================================
+   PARK HOURS
+   ================================= */
+.park-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(900px, 90%);
+
+    margin: 20px auto;
+}
+
+
+.dTable {
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 5px !important;
+    background-color: #fff !important;
+    display: table;
+    height: 100%;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+th {
+    background: none;
+    padding: 8px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* =================================
+   SAMPLE PARK HOURS TABLE
+   ================================= */
+
+/*
+ * These styles apply only to the Park Hours table.
+ *
+ * They override the general .dTable styling above
+ * without changing tables used elsewhere in the site.
+ */
+#dataTable-left {
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 10px !important;
+    overflow: hidden;
+    background-color: transparent !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/*
+ * Style the Park Hours table header.
+ */
+#dataTable-left th {
+    background-color: #093475;
+    color: white;
+    padding: 14px;
+}
+
+
+/*
+ * Style the individual Park Hours rows.
+ */
+#dataTable-left td {
+    background-color: white;
+    color: #123;
+    padding: 14px;
+
+    border-bottom:
+        1px solid #d8e1e8;
+}
+
+
+/*
+ * Places the fictional-data notice directly beneath
+ * the table instead of beside it.
+ */
+.portfolio-note {
+    margin: 8px 0 0 0;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* =================================
+   TERMS BUTTON
+   ================================= */
+#Terms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =================================
+   CENTER THE MAP IMAGE AREA
+   ================================= */
+.subbox > img {
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -1,0 +1,50 @@
+.cabanaIntro{
+    text-align: center;
+}
+.slideshow-container {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.mySlides {
+    display: none;
+}
+.text {
+    color: #000000;
+    font-size: 22px;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+table th{
+    text-align: center;
+    align-items: center;
+}
+.cabanaPadding{
+    padding-left: 10%;
+    font-kerning: auto;
+    justify-content: center;
+}
+#bottomText{
+    font-size: 12px;
+    font-kerning: auto;
+    text-align: center;
+    justify-content: center;
+}
+.cabanaIntro p{
+    font-kerning: auto;
+    text-align: center;
+    justify-content: center;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto 1fr auto; /* title·meta·body·button */
+  gap: 14px;
+}
+.card {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+}

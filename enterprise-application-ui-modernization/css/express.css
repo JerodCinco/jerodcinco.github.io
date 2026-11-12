@@ -1,0 +1,159 @@
+.image-left {
+    float: left;
+    margin-right: 15px;
+}
+
+.bigtext {
+    font-size: 25px;
+}
+
+.bigfont {
+    font-size: 22px;
+}
+
+.table-left {
+    width:100%;
+}
+
+.Description {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px;
+}
+
+.table-left {
+    float:none;
+    width:100%;
+}
+
+.ExpressN {
+
+    width: clamp(
+        350px,
+        40vw,
+        600px
+    );
+
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    padding: 15px;
+}
+
+.express-header {
+    padding: 15px 20px 0 20px;
+}
+
+
+.epadding {
+    padding-right: 1%;
+}
+
+.table-padding {
+    padding-left: 5%;
+}
+
+.social {
+  display:flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 2rem;
+  list-style: none;
+}
+
+.social li {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.social li::after {
+  position: absolute;
+  content: attr(data-tooltip);
+  inset: -45% auto auto 50%;
+  font-size: 0.875rem;
+  color: #aeada3;
+  background: var(--bg, #2681f0);
+  border-radius: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
+    visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.social li:has(a:hover, a:focus-visible)::after {
+  opacity: 1;
+  visibility: visible;
+  inset-block-start: -60%;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 55px;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #aeada3;
+  transition: all .2s ease;
+}
+
+
+.social a > i {
+  position: relative;
+  z-index: 1;
+}
+
+.social a::after {
+  display:none;
+}
+
+.social a:hover,
+.social a:focus-visible {
+
+  color: white;
+
+  background: rgba(255,255,255,.25);
+
+  transform: translateY(-2px);
+}
+
+.social a:hover::after,
+.social a:focus-visible::after {
+  inset-block-start: 0;
+}
+
+
+input[type="date"] {
+  width: 180px;
+  height: 55px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  color: white;
+  background: rgba(255,255,255,.18);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+
+input[type="date"]::-webkit-clear-button {
+  font-size: 18px;
+  height: 30px;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  filter: invert(100%);
+}

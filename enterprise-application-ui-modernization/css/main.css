@@ -1,0 +1,93 @@
+.btn-lg {
+    width: 100% !important;
+    border: none;
+    border-radius: 8px;
+}
+
+.SeasonalEvent-BUTTON {
+    background: #000;
+    color: #fff;
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    margin-bottom: 0;
+
+    font-size: 14px;
+    font-weight: normal;
+
+    box-shadow:
+        0 0 8px rgba(0, 0, 0, 0.5);
+
+    line-height: 1.42857143;
+
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    cursor: default;
+
+    user-select: none;
+
+    background-image: none;
+
+    border: none;
+    border-radius: 8px;
+}
+
+
+#welcome {
+    padding-top: 100px;
+}
+
+.welcome-h3 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    display: block;
+}
+
+button {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    color: #03182f;
+    font-weight: bold;
+    background-color: #82b7ea !important;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
+}
+
+.btn-primary:active {
+    color: #fff;
+}
+
+.btn a {
+    color: inherit;
+}
+
+button a:hover,
+.btn:hover {
+    text-decoration: none;
+    color: #03182f !important;
+}
+
+.btn-lg {
+    width: 250px;
+    height: 100px;
+}
+
+.row-centered {
+    text-align: center;
+    max-width: 1800px;
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

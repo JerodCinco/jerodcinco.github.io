@@ -1,0 +1,363 @@
+/* =========================================================
+   PAGE FOUNDATION
+   ========================================================= */
+
+/*
+ * Global page styling.
+ *
+ * Establishes the shared visual foundation used across
+ * the application, including the default font and blue
+ * background surrounding the primary content cards.
+ *
+ * Production Version:
+ * This styling formed the common application shell used
+ * across the tablet-based sales interface.
+ *
+ * Portfolio Version:
+ * The same visual foundation is preserved to demonstrate
+ * the original layout and design system while proprietary
+ * branding and content have been replaced.
+ *
+ * min-height ensures each page occupies at least the
+ * full height of the browser viewport.
+ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #06548e 0%,
+            #0a67a5 35%,
+            #095a94 100%
+        );
+}
+
+
+/*
+ * Legacy animated background.
+ *
+ * Originally used to animate the application
+ * shell gradient. Retained for future use but
+ * currently not applied to the page.
+ */
+
+ @keyframes gradientMove {
+     0% {
+         background-position: 0 50%;
+     }
+
+     50% {
+         background-position: 100% 50%;
+     }
+
+     100% {
+         background-position: 0 50%;
+     }
+ }
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+/*
+ * Guest-facing navigation container.
+ *
+ * Uses Flexbox to evenly space the navigation buttons.
+ * These controls appear on every major SalesMat page.
+ */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*
+ * Utility container used for legal text
+ * and supporting information displayed
+ * beneath pricing tables.
+ */
+ .bottom {
+     text-align: center;
+ }
+
+/*
+ * Shared navigation button.
+ *
+ * Production Version:
+ * Navigation labels were rotated 180 degrees because the
+ * tablet was positioned between a Team Member and guest
+ * across a desk. This allowed the guest-facing controls
+ * to be read from the opposite side of the device.
+ *
+ * Portfolio Version:
+ * Navigation labels remain upright because the application
+ * is presented on a conventional desktop display.
+ */
+.square-btn {
+    width: 135px;
+    height: 85px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1788d7 0%,
+            #0f74c4 100%
+        );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.20);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    line-height: 1.15;
+
+    padding: 6px;
+
+    box-sizing: border-box;
+
+    transition:
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+/*
+ * Removes default browser underlines from links.
+ *
+ * SalesMat uses custom button and navigation
+ * styling instead of standard hyperlink styling.
+ */
+ a {
+     text-decoration: none;
+
+ }
+
+ .square-btn:hover {
+     background-color: #2980b9;
+ }
+
+/* =========================================================
+   CONTENT WRAPPER
+   ========================================================= */
+
+/*
+ * Main page container.
+ *
+ * Restricts maximum content width while allowing
+ * pages to scale on larger displays.
+ */
+.box {
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding-bottom: 40px;
+}
+
+/*
+ * Shared content card.
+ *
+ * Used across:
+ * - Tickets
+ * - Express
+ * - Annual Passes
+ * - Rentals
+ *
+ * Creates the white card presentation used for all
+ * Team Member-facing content.
+ */
+.subbox {
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.18);
+
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+/*
+ * Shared table styling.
+ *
+ * Most pricing information inside SalesMat is displayed
+ * dynamically in tables. These styles improve readability
+ * and create consistent spacing across pages.
+ */
+table {
+     border-collapse: collapse;
+     width: 100%;
+     margin-top: 10px;
+     padding: 8px;
+ }
+
+ /*
+ * Shared table cell styling.
+ *
+ * Creates consistent spacing, borders, and
+ * typography for both table headers and
+ * dynamically-rendered pricing rows.
+ */
+th,
+td {
+
+    border: 1px solid #dce3ec;
+
+    padding: 14px;
+
+    color: #1a2d4c;
+}
+
+th {
+
+    background: #edf4fb;
+
+    color: #173b72;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+/*
+ * Shared title style.
+ *
+ * Used for primary page headings, such as:
+ * - Single Park Admission
+ * - Premium Access categories
+ * - Membership option titles
+ * - Rentals page headings
+ *
+ * Establishes visual hierarchy inside content cards.
+ */
+.ProductDescription {
+
+
+    text-align: center;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: #123c77;
+
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   TICKET PRICE DISPLAY UTILITIES
+   ========================================================= */
+
+/*
+ * Positions the calculated “Less Than $XX Per Day”
+ * pricing callout within ticket product rows.
+ */
+
+.prk2prk-title {
+    display: block;
+}
+
+ /*
+ * Small supporting label displayed above
+ * the calculated daily ticket cost.
+ */
+ .lessthan {
+     color: #717171;
+     font-size: 14px;
+ }
+
+ /*
+ * Styles the dollar sign separately so it
+ * can be visually smaller than the price.
+ */
+
+ .sign {
+     vertical-align: top;
+     font-size: 12px;
+ }
+
+/*
+ * Right-aligns pricing callouts within
+ * larger ticket product descriptions.
+ *
+ * Separates the calculated per-day pricing
+ * from the ticket title and marketing copy.
+ */
+ .priceText {
+     text-align: right;
+     padding-right: 5%;
+ }
+
+ /*
+ * Used on ticket pages to display:
+ *
+ * LESS THAN
+ * $XXX
+ * PER DAY
+ *
+ * Allows pricing to be visually separated
+ * from product descriptions.
+ */
+.ppd {
+     width: 90px;
+     display: inline-block;
+     margin: auto;
+     padding: 0;
+     line-height: 14px;
+     color: #000;
+ }
+
+ .pd {
+     font-size: 14px;
+     width: 5px;
+     display: inline-block;
+ }
+
+ /*
+ * Primary calculated price amount.
+ *
+ * Example:
+ * $29
+ *
+ * Intentionally larger than surrounding
+ * text so the daily price stands out.
+ */
+
+ .price {
+     font-size: 34px;
+ }
+
+ /*
+ * Reusable larger text utility used for
+ * product names and emphasized descriptions
+ * throughout the application.
+ */
+ .bigfont {
+     font-size: 22px;
+ }

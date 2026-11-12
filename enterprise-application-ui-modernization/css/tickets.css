@@ -1,0 +1,217 @@
+/* =========================================================
+   FILTER CONTROL BAR
+   ========================================================= */
+
+/*
+ * Shared control container.
+ *
+ * Used throughout SalesMat for product filters such as:
+ * - 1 & 2-Day / Multi-Day
+ * - Unlimited / Standard / VB / Epic
+ * - 2-Park / 3-Park
+ * - Strollers / WC-EVC
+ *
+ * Flexbox allows controls to wrap gracefully on
+ * smaller screens while remaining centered.
+ */
+.social {
+  display:flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 2rem;
+  list-style: none;
+}
+
+/*
+ * Individual control wrapper.
+ *
+ * Provides positioning for hover effects and helps
+ * vertically align controls inside the toolbar.
+ */
+.social li {
+  position: relative;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+/*
+ * Tooltip pseudo-element.
+ *
+ * ::after creates an element that does not exist
+ * in the HTML. The displayed text comes from the
+ * element's data-tooltip attribute.
+ *
+ * This allows additional contextual information
+ * to appear without adding extra HTML elements.
+ */
+.social li::after {
+  position: absolute;
+  content: attr(data-tooltip);
+  inset: -45% auto auto 50%;
+  font-size: 0.875rem;
+  color: #aeada3;
+  background: var(--bg, #2681f0);
+  border-radius: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
+    visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/*
+ * Displays the tooltip when a filter control is
+ * hovered with a mouse or focused via keyboard.
+ *
+ * :has() checks whether the list item contains
+ * an anchor currently being interacted with.
+ */
+.social li:has(a:hover, a:focus-visible)::after {
+  opacity: 1;
+  visibility: visible;
+  inset-block-start: -60%;
+}
+
+/*
+ * Shared filter control.
+ *
+ * Each filter is styled as a touch-friendly card.
+ * This pattern became the standard control design
+ * across Tickets, Express, Annual Passes, and Rentals.
+ *
+ * Flexbox centers labels regardless of text length.
+ * min-width maintains consistent control sizing.
+ */
+.social a {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  height: 55px;
+
+  background: rgba(255,255,255,.15);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+
+  text-decoration: none;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  color: #aeada3;
+
+  transition: all .2s ease;
+}
+
+/*
+ * Keeps icons above any hover-overlay or
+ * background effects applied to the control.
+ */
+.social a > i {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * Legacy hover-overlay effect.
+ *
+ * Originally used to create an animated
+ * blue slide effect on hover.
+ *
+ * Disabled in favor of the simpler card
+ * interaction pattern used today.
+ */
+.social a::after {
+  display:none;
+}
+
+/*
+ * Interactive control state.
+ *
+ * Provides visual feedback when a control is
+ * hovered with a mouse or focused via keyboard.
+ *
+ * The slight upward movement gives controls a
+ * modern "lift" effect and helps communicate
+ * that they are interactive.
+ */
+.social a:hover,
+.social a:focus-visible {
+
+  color: white;
+
+  background: rgba(255,255,255,.25);
+
+  transform: translateY(-2px);
+}
+.social a:hover::after,
+.social a:focus-visible::after {
+  inset-block-start: 0;
+}
+
+/* =========================================================
+   DATE PICKER
+   ========================================================= */
+
+/*
+ * Native HTML date control.
+ *
+ * Styled to visually match the shared SalesMat
+ * filter controls while preserving browser-native
+ * calendar functionality.
+ *
+ * Used on:
+ * - Park Tickets
+ * - Express Passes
+ */
+
+input[type="date"] {
+
+  width: 180px;
+
+  height: 55px;
+  /* Ensures padding does not increase the total control width */
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  color: white;
+
+  background: rgba(255,255,255,.18);
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 1.25rem;
+
+  font-weight: 600;
+
+  font-family: Arial, sans-serif;
+}
+/*
+ * Styles the browser-provided clear button
+ * used by some WebKit-based date controls.
+ */
+input[type="date"]::-webkit-clear-button {
+  font-size: 18px;
+  height: 30px;
+  position: relative;
+}
+/*
+ * Styles the browser-provided calendar icon.
+ *
+ * The icon is inverted so it remains visible
+ * against the darker translucent background.
+ */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  filter: invert(100%);
+}
